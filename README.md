@@ -6,23 +6,12 @@ CancerPAM is a comprehensive pipeline for analyzing tumor-specific off-target ri
 
 ## Features
 
-### 🚀 **Three Implementation Levels**
-
-1. **Simple Python-Only** (Recommended for most users)
+### **Simple Python-Implementation**
    - No external dependencies beyond Python packages
    - Pure Python sequence scanning
    - Fast and reliable
    - Perfect for research and analysis
 
-2. **Enhanced with Alignment Tools**
-   - BWA and/or Bowtie2 integration
-   - More sensitive alignment
-   - Better for large-scale analysis
-
-3. **Full Pipeline**
-   - All tools including optional Cas-OFFinder
-   - Maximum accuracy
-   - Requires more complex setup
 
 ### 📊 **Analysis Capabilities**
 
@@ -70,8 +59,6 @@ python test_cancerpam.py
 
 ## Detailed Setup Instructions
 
-### Option 1: Simple Python-Only Setup (Recommended)
-
 This is the easiest option and sufficient for most analyses:
 
 1. Install Python 3.7+
@@ -90,30 +77,6 @@ This is the easiest option and sufficient for most analyses:
    python test_cancerpam.py
    ```
 
-### Option 2: Enhanced Setup with Alignment Tools
-
-For more sensitive analysis using BWA or Bowtie2:
-
-1. Follow steps 1-2 from Simple Setup
-2. Install additional packages:
-   ```bash
-   pip install pysam scipy
-   ```
-3. Run setup script and choose option **2**
-4. The script will attempt to download and compile BWA and Bowtie2
-
-### Option 3: Full Setup with Cas-OFFinder
-
-For maximum accuracy (more complex setup):
-
-1. Install OpenCL drivers for your system:
-   - **Intel**: Download OpenCL runtime from Intel
-   - **NVIDIA**: Install latest GPU drivers
-   - **AMD**: Install latest GPU drivers
-
-2. Download Cas-OFFinder from http://www.rgenome.net/cas-offinder/
-3. Extract to `CancerPAM_tools/cas-offinder/`
-4. Run setup script and choose option **3**
 
 ## Usage Examples
 
@@ -245,15 +208,11 @@ python simple_cancerpam.py --gRNA CCGCCAGCGCCGTCTACGTG --tumor_snvs 60000 --geno
 CancerPAM_tools/
 ├── simple_config.py          # Configuration file
 ├── chr22.fa.gz               # Sample genome (chromosome 22)
-├── bwa/                      # BWA installation (if enhanced setup)
-├── bowtie2/                  # Bowtie2 installation (if enhanced setup)
-└── cas-offinder/             # Cas-OFFinder (if full setup)
 
 Scripts:
 ├── simple_cancerpam.py       # Main pipeline (simple version)
 ├── setup_cancerpam_tools.py  # Setup script
 ├── test_cancerpam.py         # Test suite
-└── enhanced_*.py             # Enhanced versions (optional)
 ```
 
 ## Citation
@@ -261,16 +220,12 @@ Scripts:
 If you use CancerPAM in your research, please cite:
 
 ```
-[Your citation information here]
+[to be added]
 ```
-
-## License
-
-[Your license information here]
 
 ## Support
 
 For questions, issues, or contributions:
 - Create an issue on GitHub
-- Email: [your-email@domain.com]
+- Email: [Janik.Hohmann@med.uni-duesseldorf.de]
 - Documentation: [link to documentation]
