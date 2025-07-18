@@ -69,7 +69,7 @@ def test_simple_pipeline():
     # Try to import and run the simple analyzer
     try:
         sys.path.insert(0, str(Path.cwd()))
-        from simple_cancerpam import SimplePAMAnalyzer
+        from cancerpam_analytics import SimplePAMAnalyzer
         
         analyzer = SimplePAMAnalyzer(test_fasta)
         
@@ -93,7 +93,7 @@ def test_risk_calculations():
     
     try:
         sys.path.insert(0, str(Path.cwd()))
-        from simple_cancerpam import calculate_rescue_risk, calculate_novel_pam_risk
+        from cancerpam_analytics import calculate_rescue_risk, calculate_novel_pam_risk
         
         # Test rescue risk
         rescue_lambda, rescue_prob = calculate_rescue_risk(
@@ -121,7 +121,7 @@ def test_sequence_functions():
     
     try:
         sys.path.insert(0, str(Path.cwd()))
-        from simple_cancerpam import SimplePAMAnalyzer
+        from cancerpam_analytics import SimplePAMAnalyzer
         
         # Create a dummy analyzer to test functions
         test_fasta = Path("test_data/test.fa")
@@ -187,7 +187,7 @@ def main():
     if failed == 0:
         print("🎉 All tests passed! The pipeline is ready to use.")
         print("\nTo run the pipeline:")
-        print("python simple_cancerpam.py --gRNA CCGCCAGCGCCGTCTACGTG --tumor_snvs 60000")
+        print("python cancerpam_analytics.py --gRNA CCGCCAGCGCCGTCTACGTG --tumor_snvs 60000")
     else:
         print("❌ Some tests failed. Please check the setup.")
         return 1
