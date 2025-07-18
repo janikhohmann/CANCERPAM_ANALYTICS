@@ -41,13 +41,13 @@ python setup_cancerpam_tools.py
 
 ```bash
 # Run analysis with your gRNA and tumor SNV count
-python simple_cancerpam.py --gRNA CCGCCAGCGCCGTCTACGTG --tumor_snvs 60000
+python cancerpam_analytics.py --gRNA CCGCCAGCGCCGTCTACGTG --tumor_snvs 60000
 
 # Save results to file
-python simple_cancerpam.py --gRNA CCGCCAGCGCCGTCTACGTG --tumor_snvs 60000 --output results.txt
+python cancerpam_analytics.py --gRNA CCGCCAGCGCCGTCTACGTG --tumor_snvs 60000 --output results.txt
 
 # Use custom genome
-python simple_cancerpam.py --gRNA CCGCCAGCGCCGTCTACGTG --tumor_snvs 60000 --genome /path/to/genome.fa
+python cancerpam_analytics.py --gRNA CCGCCAGCGCCGTCTACGTG --tumor_snvs 60000 --genome /path/to/genome.fa
 ```
 
 ### 3. Test the Installation
@@ -82,12 +82,12 @@ This is the easiest option and sufficient for most analyses:
 
 ### Basic Analysis
 ```bash
-python simple_cancerpam.py --gRNA CCGCCAGCGCCGTCTACGTG --tumor_snvs 60000
+python cancerpam_analytics.py --gRNA CCGCCAGCGCCGTCTACGTG --tumor_snvs 60000
 ```
 
 ### Custom Parameters
 ```bash
-python simple_cancerpam.py \
+python cancerpam_analytics.py \
   --gRNA CCGCCAGCGCCGTCTACGTG \
   --tumor_snvs 60000 \
   --max_mismatches 3 \
@@ -100,7 +100,7 @@ python simple_cancerpam.py \
 wget http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz
 
 # Run analysis
-python simple_cancerpam.py \
+python cancerpam_analytics.py \
   --gRNA CCGCCAGCGCCGTCTACGTG \
   --tumor_snvs 60000 \
   --genome hg38.fa.gz
@@ -138,13 +138,13 @@ The pipeline provides comprehensive risk assessment:
 The pipeline automatically uses multiple CPU cores for faster analysis:
 ```bash
 # Disable multiprocessing (for debugging)
-python simple_cancerpam.py --gRNA CCGCCAGCGCCGTCTACGTG --tumor_snvs 60000 --no_multiprocessing
+python cancerpam_analytics.py --gRNA CCGCCAGCGCCGTCTACGTG --tumor_snvs 60000 --no_multiprocessing
 ```
 
 ### Custom Genome Files
 You can use any reference genome in FASTA format:
 ```bash
-python simple_cancerpam.py --gRNA CCGCCAGCGCCGTCTACGTG --tumor_snvs 60000 --genome /path/to/custom_genome.fa
+python cancerpam_analytics.py --gRNA CCGCCAGCGCCGTCTACGTG --tumor_snvs 60000 --genome /path/to/custom_genome.fa
 ```
 
 ## Troubleshooting
@@ -181,7 +181,7 @@ python simple_cancerpam.py --gRNA CCGCCAGCGCCGTCTACGTG --tumor_snvs 60000 --geno
 
 3. Try with the sample data:
    ```bash
-   python simple_cancerpam.py --gRNA CCGCCAGCGCCGTCTACGTG --tumor_snvs 60000
+   python cancerpam_analytics.py --gRNA CCGCCAGCGCCGTCTACGTG --tumor_snvs 60000
    ```
 
 ## Algorithm Details
@@ -210,7 +210,7 @@ CancerPAM_tools/
 ├── chr22.fa.gz               # Sample genome (chromosome 22)
 
 Scripts:
-├── simple_cancerpam.py       # Main pipeline (simple version)
+├── cancerpam_analytics.py       # Main pipeline (simple version)
 ├── setup_cancerpam_tools.py  # Setup script
 ├── test_cancerpam.py         # Test suite
 ```
@@ -228,4 +228,3 @@ If you use CancerPAM in your research, please cite:
 For questions, issues, or contributions:
 - Create an issue on GitHub
 - Email: [Janik.Hohmann@med.uni-duesseldorf.de]
-- Documentation: [link to documentation]
